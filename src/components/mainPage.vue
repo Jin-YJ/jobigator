@@ -40,6 +40,7 @@ export default {
 </script>
 
 <style>
+
 .background {
   /* 페이지 전체 크기 설정 */
 }
@@ -51,7 +52,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover; /* 이미지를 화면에 맞게 자동 조정 */
-  z-index: -1; /* 다른 콘텐츠 위에 위치하도록 설정 */
+  z-index: 0; /* 다른 콘텐츠 위에 위치하도록 설정 */
   opacity: 0.8;
 }
 
@@ -66,22 +67,24 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20%;
+
+  
   /* 여기서 이미지 경로 및 크기 설정이 필요하다면 추가하세요. */
 }
 
 /* 가운데 줄 모양의 div 스타일링 */
 .line {
-  position: absolute;
+  position: relative;
   top: 12%; /* 위에서 25% 위치에 배치 */
   left: 0;
   width: 100%;
-  height: 62%; /* 줄의 높이 설정 */
+  height: 60%; /* 줄의 높이 설정 */
   background-color: rgba(255, 255, 255, 0.5); /* 반투명한 흰색 배경 설정 */
   z-index: 1; /* 다른 콘텐츠 위에 위치하도록 설정 */
 }
 
 .footer-content {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   /* 하단 요소 스타일링 */
@@ -91,6 +94,8 @@ export default {
 .man-character {
   width: 20%;
   height: 80%;
+  margin-bottom: -3%;
+  display: inline-block;
   /* 원하는 스타일 추가 */
 }
 
@@ -100,4 +105,5 @@ export default {
   font-family: 'BungeeSpice', sans-serif; /* 'BungeeSpice' 글꼴 사용 */
   font-size: 80px;
 }
+
 </style>
