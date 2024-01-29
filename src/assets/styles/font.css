@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'BungeeSpice'; /* 글꼴 이름 지정 */
+    src: url('../font/BungeeSpice-Regular.ttf') format('truetype'); /* TTF 글꼴 파일의 경로 지정 */
+    /* 추가적인 글꼴 스타일 속성 설정 가능 */
+  }
+  
+  /* 특정 요소에 글꼴을 적용 */
+  .some-element {
+    font-family: 'BungeeSpice', sans-serif; 
+  }
