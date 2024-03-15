@@ -8,9 +8,12 @@
       
       <!-- 가운데 줄 모양의 div 추가 -->
       <div class="line">
+        
+        
+        <div class="speech-bubble right-bubble">여기에 메시지를 입력하세요.</div>
         <!-- Man 이미지에 다른 클래스 "man-character" 추가 -->
         <img :src="manImg" alt="Man Image" class="man-character" />
-
+        <div class="speech-bubble left-bubble">여기에 메시지를 입력하세요.</div>
         <!-- Jobigator 텍스트에 다른 클래스 "jobigator-text" 추가 -->
         <div class="jobigator-text">
           Jobigator
@@ -95,7 +98,8 @@ export default {
   width: 20%;
   height: 80%;
   margin-bottom: -3%;
-  display: inline-block;
+  display: absolute;
+
   /* 원하는 스타일 추가 */
 }
 
@@ -104,6 +108,52 @@ export default {
   /* 원하는 스타일 추가 */
   font-family: 'BungeeSpice', sans-serif; /* 'BungeeSpice' 글꼴 사용 */
   font-size: 80px;
+}
+
+/* 말풍선 공통 스타일 */
+.speech-bubble {
+  display: inline-block; /* 인라인 블록 설정 */
+  position: relative; /* 상대 위치 설정 */
+  padding: 10px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  margin: 0 10px; /* 말풍선 간의 마진 설정 */
+  z-index: 2; /* 말풍선이 다른 요소들 위에 오도록 z-index 설정 */
+}
+
+/* 말풍선 꼬리 스타일 */
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 10px;
+  display: block;
+}
+
+/* 좌측 말풍선 꼬리 */
+.left-bubble:after {
+  top: 20px;
+  left: -18px; /* 꼬리 위치 조정 */
+  border-color: transparent #f0f0f0 transparent transparent;
+}
+
+/* 우측 말풍선 꼬리 */
+.right-bubble:after {
+  top: 20px;
+  right: -18px; /* 꼬리 위치 조정 */
+  border-color: transparent transparent transparent #f0f0f0;
+}
+
+.left-bubble {
+  top: -400px; /* 위치를 상위로 10% 올림 */
+  width: 15%;
+  height: 20%;
+  /* 나머지 속성은 그대로 유지 */
+}
+.right-bubble {
+  top: -auto;
+  width: 15%;
+  height: 20%;
 }
 
 </style>
